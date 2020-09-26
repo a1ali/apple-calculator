@@ -78,72 +78,69 @@ body {
    
 }
 
-.screen {
+#screen {
     grid-area: screen;
     color: white;
     font-family: -apple-system, sans-serif;
     font-size: 70px;
     justify-self: right;
 }
-.clear{
+#clear{
     grid-area: clear;
 
 }
-.pos-neg {
+#pos-neg {
     grid-area: pos-neg;
 }
-.percent {
+#percent {
     grid-area: percent;
 }
-.percent {
-    grid-area: percent;
-}
-.divide {
+#divide {
     grid-area: divide;
 }
-.seven{
+#seven{
     grid-area: seven;
 }
-.eight {
+#eight {
     grid-area: eight;
 }
-.nine {
+#nine {
     grid-area: nine;
 }
-.multiply {
+#multiply {
     grid-area: multiply;
 }
-.four {
+#four {
     grid-area: four;
 }
-.five {
+#five {
     grid-area: five;
 }
-.six {
+#six {
     grid-area: six;
 }
-.subtract {
+#subtract {
     grid-area: subtract;
 }
-.one {
+#one {
     grid-area: one;
 }
-.two {
+#two {
     grid-area: two;
 }
-.three {
+#three {
     grid-area: three;
 }
-.add{
+#add{
     grid-area: add;
 }
-.zero {
+#zero {
     grid-area: zero;
 }
-.dot{
+#dot{
     grid-area: dot;
 }
-.equal {
+#equal {
     grid-area: equal;
     padding: 0px 10px 0px 10px;
 }
