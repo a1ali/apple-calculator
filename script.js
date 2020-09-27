@@ -36,9 +36,9 @@ function insertNum(num){
 function updateScreen(){
     if (val.length < 11){
         let x = parseFloat(val.join(""));
-        console.log(x);
+        //console.log(x);
         screen.textContent = x;
-        console.log(val);
+        //console.log(val);
     }
 }
 
@@ -75,6 +75,31 @@ function updateScreenOperation(){
         }
 }
     //console.log(oper + ' ' + numbers[0] + " " + numbers[1])
+}
+
+function doPercent(){
+    let valLength = val.length;
+    if (valLength == 1){
+        for (let i =0; i<2; i++){
+            val.unshift(0);
+        }
+        valLength = val.length;
+    }
+    else if (valLength == 2){
+        val.unshift(0);
+        valLength = val.length;
+    }
+    //let arrThird = val[valLength - 3];
+    let arrSec = val[valLength - 2];
+    let arrLast = val[valLength - 1];
+
+    //val[valLength - 3] = '.';
+    val[valLength - 2] = '.';
+    val[valLength -1 ] = arrSec;
+    val.push(arrLast);
+    //console.log(val);
+    updateScreen();
+
 }
 
 function doMath(oper, num1, num2) {
@@ -188,6 +213,7 @@ posNeg.addEventListener('click', function(){
 })
 percent.addEventListener('click', function(){
     //console.log('percent is pressed');
+    doPercent();
 })
 divide.addEventListener('click', function(){
     //console.log('divide is pressed');
@@ -264,7 +290,7 @@ dot.addEventListener('click', function(){
     if (decimalflag == false){
         val.push('.');
         updateScreen();
-        console.log(val)
+        //console.log(val)
         decimalflag = true;
     }
 })
@@ -281,7 +307,7 @@ equal.addEventListener('click', function(){
     
 })
 
-console.log("numbers arr" +numbers)
+//console.log("numbers arr" +numbers)
 
 /*
 
