@@ -50,6 +50,7 @@ function clearScreen(){
     overflow = 'test';
     total = 0;
     decimalflag = false;
+    counter = 0;
 }
 function updateScreenOperation(){
     if (val.length > 0) {
