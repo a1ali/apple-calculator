@@ -25,6 +25,7 @@ let operation = '';
 let counter = 0;
 let overflow = 'test';
 let decimalflag = false;
+let alreadyNeg = false;
 
 
 function insertNum(num){
@@ -51,6 +52,7 @@ function clearScreen(){
     total = 0;
     decimalflag = false;
     counter = 0;
+    alreadyNeg = false;
 }
 function updateScreenOperation(){
     if (val.length > 0) {
@@ -59,12 +61,14 @@ function updateScreenOperation(){
         if (counter === 0){
             numbers[0] = x;
             val = [];
+            alreadyNeg = false;
             decimalflag = false;
             counter++;
         }
         else if (counter === 1){
             numbers.push(x);
             val = [];
+            alreadyNeg = false;
             decimalflag = false;
             counter = 0;
         }
@@ -208,9 +212,20 @@ clear.addEventListener('click', function(){
 })
 posNeg.addEventListener('click', function(){
     //console.log('posNeg is pressed');
-    val.unshift('-');
-    console.log(val);
-    updateScreen();
+    if (alreadyNeg == false){
+        val.unshift('-');
+        console.log(val);
+        updateScreen();
+        alreadyNeg =  true;
+    }
+    else {
+        if (val[0] == '-'){
+            val.shift()
+            updateScreen()
+            alreadyNeg = false;
+        }
+    }
+    
 })
 percent.addEventListener('click', function(){
     //console.log('percent is pressed');
